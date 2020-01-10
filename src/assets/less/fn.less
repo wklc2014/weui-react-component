@@ -1,0 +1,25 @@
+.dot(@width: 30px, @height: 12px) {
+
+  &:before,
+  &:after {
+    position: absolute;
+    right: 0;
+    width: @width - 4px;
+    height: @height;
+  }
+
+  &:after {
+    content: '';
+    background-color: #ddd;
+    border-radius: 2px;
+    z-index: 1;
+  }
+
+  &:before {
+    content: '...';
+    text-align: center;
+    color: #fff;
+    top: -4px;
+    z-index: 2;
+  }
+}

@@ -1,0 +1,31 @@
+@height: 30px;
+
+.siteNav {
+  height: @height;
+  line-height: @height;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  :global(.weui-navbar__item) {
+    padding: 0;
+
+    a {
+      font-size: 14px;
+      font-weight: 100;
+      color: #000;
+    }
+
+    &.weui-bar__item_on {
+      background-color: #74B5F7;
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.siteRoute {
+  padding-top: 10px + @height;
+}

@@ -1,0 +1,39 @@
+@import '../../assets/less/fn.less';
+
+.newsListItem {
+  padding: 10px;
+
+  :global(.weui-media-box__desc) {
+    font-size: 15px;
+    color: #555;
+    padding-top: 0;
+  }
+
+  :global(.weui-media-box__info) {
+    font-size: 14px;
+    color: #555;
+    padding-top: 4px;
+    margin-top: 0;
+    color: #cecece;
+    font-size: 12px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  :global(.comment__meta) {
+    float: right;
+    position: relative;
+    padding-right: 24px;
+    .dot(24px);
+  }
+
+}
+
+.newsListTitle {
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 30px;
+  line-height: 30px;
+}
