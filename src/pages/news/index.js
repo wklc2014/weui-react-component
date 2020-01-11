@@ -5,16 +5,25 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
 import NewsList from '../../components/common/news-list.js';
+import LoadingMore from '../../components/loadmore/index.js';
 import styles from './styles.less';
 
 class NewsPage extends Component {
 
   static defaultProps = {
     hotList: [],
+    newsList: [],
+    loading: false,
+  }
+
+  componentDidMount() {
+    this.props.getNewsList();
   }
 
   render() {
-    const { hotList } = this.props;
+    const { hotList, newsList, loading } = this.props;
+
+    if (loading) return <LoadingMore text="新闻列表加载中..." />;
 
     return (
       <div>
@@ -24,6 +33,12 @@ class NewsPage extends Component {
           list={hotList}
           showInfos
         />
+        <NewsList
+          className={styles.hotList}
+          title="最新新闻"
+          list={newsList}
+          showInfos
+        />
       </div>
     )
   }
@@ -31,6 +46,8 @@ class NewsPage extends Component {
 
 NewsPage.propTypes = {
   hotList: propTypes.array,
+  newsList: propTypes.array,
+  loading: propTypes.bool,
 }
 
 export default NewsPage;

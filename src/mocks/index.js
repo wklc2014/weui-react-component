@@ -1,6 +1,6 @@
 import Mock from 'mockjs';
 
-import './get-auth-token.js';
+import './getNewsList.js';
 
 Mock.setup({
   timeout: '200-1600',
